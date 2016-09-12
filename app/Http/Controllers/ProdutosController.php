@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Produto;
+use App\Categoria;
 use App\Http\Requests\ProdutoRequest;
 
 class ProdutosController extends Controller {
@@ -19,7 +20,8 @@ class ProdutosController extends Controller {
 
     public function create()
     {
-      return view ('produtos.create');
+      $categorias = Categoria::get();
+      return view ('produtos.create',['categorias' => $categorias]);
     }
 
     public function store(ProdutoRequest $request)

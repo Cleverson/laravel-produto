@@ -19,9 +19,17 @@
     	{!! Form::text('descricao', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
+        <label for="title" class="control-block">Assign Product to Category:</label>
+        <select class="form-control">
+          @foreach($categorias as $categoria)
+            <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
+          @endforeach
+        </select>
+    </div>
+    <div class="form-group">
 		{!! Form::submit('Criar Produto', ['class'=>'btn btn-primary']) !!}
   	</div>
     {!! Form::close() !!}
   </div>
-  
+
 @endsection
