@@ -18,20 +18,16 @@
     	{!! Form::label('descricao', 'Descrição') !!}
     	{!! Form::text('descricao', null, ['class' => 'form-control']) !!}
     </div>
-    <!--
+    
     <div class="form-group">
-        <label for="title" class="control-block">Categoria:</label>
-        <select class="form-control">
+        <label for="categoria_id" class="control-block">Categoria:</label>
+        <select class="form-control" name="categoria_id">
           @foreach($categorias as $categoria)
             <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
           @endforeach
         </select>
     </div>
-    -->
-    <div class="form-group">
-      {!! Form::label('categoria_id','Categoria') !!}
-      {!! Form::select('categoria_id',$categorias, null, ['class' => 'form-control']) !!}
-    </div>
+    
     <div class="form-group">
 		{!! Form::submit('Criar Produto', ['class'=>'btn btn-primary']) !!}
   	</div>
