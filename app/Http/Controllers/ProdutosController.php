@@ -20,13 +20,16 @@ class ProdutosController extends Controller {
 
     public function create()
     {
+      //$categorias = Categoria::get();
+      //return view ('produtos.create',['categorias' => $categorias]);
       $categorias = Categoria::get();
-      return view ('produtos.create',['categorias' => $categorias]);
+      return View('produtos.create',['categorias'=>$categorias]);
     }
 
     public function store(ProdutoRequest $request)
     {
         $input = $request->all();
+        dd($input);
         Produto::create($input);
         return redirect('produtos');
     }
